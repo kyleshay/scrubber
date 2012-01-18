@@ -1,0 +1,11 @@
+Required files:
+	scrubber.js - scroll bar dependencies
+	hooker.js - event handling dependencies
+	
+HTML setup:	
+<div id="scrollarea">
+    <div id="scrollcontent">
+	<!-- Content to be scrolled goes here -->
+	</div>
+    <div id="scrollbar"><div id="scrollscrub"></div></div>
+</div>
