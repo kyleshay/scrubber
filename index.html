@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Test Scrubber</title>
+    <link rel = "stylesheet" type="text/css" href="scrubber.css" >
+</head>
+<body>	
+<div style='border:1px dotted red;height:100px;width:50px'>down</div>
+<div style='float:left;border:1px dotted red;height:50px;width:100px;padding-right:30px;'>over</div>
+<div id="scrollarea">
+    <div id="scrollcontent">
+    <!-- You can add all your contents here -->
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a 
+		type specimen book. It has survived not only five centuries, but also the 
+		leap into electronic typesetting, remaining essentially unchanged. 
+		It was popularised in the 1960s with the release of Letraset sheets 
+		containing Lorem Ipsum passages, and more recently with desktop publishing 
+		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a 
+		containing Lorem Ipsum passages, and more recently with desktop publishing 
+		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a 
+		containing Lorem Ipsum passages, and more recently with desktop publishing 
+		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a 
+		containing Lorem Ipsum passages, and more recently with desktop publishing 
+		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+		when an unknown printer took a galley of type and scrambled it to make a 
+		containing Lorem Ipsum passages, and more recently with desktop publishing 
+		software like Aldus PageMaker including versions of Lorem Ipsum. 
+    </div>
+    <!--// don't remove this: the scrollbar and scrollscrubber place holder -->
+    <div id="scrollbar">
+        <div id="scrollscrub">
+        </div>
+    </div>
+    <!-- scrollbar end //-->
+</div><!-- end of scrollarea //-->
+    <script src="hooker.js"></script>
+    <script src="scrubber.js"></script>
+	<script type="text/javascript">
+		hooker.on("load", window, scroll.initialize);
+	</script>
+</body>
+
+</html>
