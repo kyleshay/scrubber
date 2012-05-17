@@ -32,13 +32,27 @@ var scroll = {
 	scrubH:0,	
 	initPosition:0,
 	moveVal:0,	
-	initialize: function() {
-		scroll.computeDimensions();
-		scroll.setScrub();
-		scroll.setContent();					
+	initialize: function(o) {	
+		scroll.scrub=document.getElementById(o.scrub);
+		scroll.bar=document.getElementById(o.bar);
+		scroll.content=document.getElementById(o.content);
+		scroll.area=document.getElementById(o.area);					
 		
+		scroll.resize(o);
+		hooker.on('resize', window, scroll.resize(o));
 		hooker.on('mousedown', scroll.scrub, scroll.activate);
 		hooker.on('mousewheel', scroll.area, scroll.slide);
+	},
+	resize: function(o) {	
+		scroll.area.style.height = (o.height || 500) +"px";
+		scroll.area.style.width = (o.width || 400)+"px";
+		scroll.bar.style.height = (o.height || 500)+"px";
+		
+		scroll.barH = scroll.bar.offsetHeight;
+		scroll.contentH = scroll.content.offsetHeight;
+		
+		scroll.setScrub();
+		scroll.setContent();
 	},
 	activate: function(e) {
 		hooker.on('mousemove', document, scroll.slide);
@@ -89,6 +103,7 @@ var scroll = {
 		if(scroll.contentH > scroll.barH) {
 			var t=scroll.barH/(scroll.contentH/scroll.barH);			
 			scroll.scrub.style.height=(t<20?20:t)+'px';
+			scroll.scrubH = scroll.scrub.offsetHeight;
 			scroll.scrub.style.top='0px';
 			scroll.bar.style.visibility = '';
 			scroll.scrub.style.visibility = '';
@@ -102,16 +117,7 @@ var scroll = {
 		scroll.content.style.marginTop='0px';
 	},
 	/*Helper functions*/
-	computeDimensions: function() {
-		scroll.scrub=document.getElementById('scrollscrub');
-		scroll.bar=document.getElementById('scrollbar');
-		scroll.content=document.getElementById('scrollcontent');
-		scroll.area=document.getElementById('scrollarea');
-		
-		scroll.barH = scroll.bar.offsetHeight;
-		scroll.contentH = scroll.content.offsetHeight;
-		scroll.scrubH =  scroll.scrub.offsetHeight;
-		
+	computeDimensions: function() {		
 		scroll.initPosition = scroll.getTop(scroll.area);
 		scroll.moveVal = (scroll.contentH-scroll.barH)/
 							(scroll.barH-scroll.scrubH);		

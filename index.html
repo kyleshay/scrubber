@@ -63,7 +63,20 @@
 	<script src="hooker.js"></script>
 	<script src="scrubber.js"></script>
 	<script type="text/javascript">
-		hooker.on("load", window, scroll.initialize);
+		hooker.on("load", window, scroll.initialize({
+			scrub	:"scrollscrub",
+			bar		:"scrollbar",
+			content	:"scrollcontent",
+			area	:"scrollarea",
+			height	:window.innerHeight-300,
+			width	:300
+		}));
+		window.onresize = function() {
+			scroll.resize({
+				height	:window.innerHeight-300,
+				width	:300
+			});
+		}
 	</script>
 </body>
 
