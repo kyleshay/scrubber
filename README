@@ -9,3 +9,22 @@ HTML setup:
 	</div>
     <div id="scrollbar"><div id="scrollscrub"></div></div>
 </div>
+
+<script src="lib/hooker.js"></script>
+<script src="lib/scrubber.js"></script>
+<script type="text/javascript">
+	hooker.on("load", window, scroll.initialize({
+		scrub	:"scrollscrub",
+		bar	:"scrollbar",
+		content	:"scrollcontent",
+		area	:"scrollarea",
+		height	:window.innerHeight-35,
+		width	:'100%'
+	}));
+	window.onresize = function() {
+		scroll.resize({
+			height	:window.innerHeight-35, // if window size is changed, resize scroll height to new window height, but leave 35 pixels below
+			width	:'100%'
+		});
+	}
+</script>
