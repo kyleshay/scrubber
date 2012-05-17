@@ -1,16 +1,14 @@
 #scrollarea, #scrollbar {
-	height: 520px; /* the height of the scroll area */
 	cursor: default;
 }
 #scrollarea {
 	display:block;
 	float:left;
 	position: relative;
-	width:300px; /* the width of the scroll area */
+	width:100%; /* the width of the scroll area */
     overflow: hidden;
 }
 #scrollcontent {
-    position: absolute;
     padding-right: 12px;
 }
 #scrollbar {
@@ -21,21 +19,7 @@
 	zoom: 1;
     background: #F2F2F2;
     border-left: 1px solid #DADADA;
-}	/*
-#scrollbar:hover {
-	background: #F2F2F2;
-	border-left: 1px solid #DADADA;
-	border-top: 1px solid #F2F2F2;
-	border-right: 1px solid #F2F2F2;
-	border-bottom: 1px solid #F2F2F2;
 }
-#scrollbar:active {
-	background: #F2F2F2;
-	border-left: 1px solid #D0D0D0;
-	border-top: 1px solid #E1E1E1;
-	border-right: 1px solid #E1E1E1;
-	border-bottom: 1px solid #E1E1E1;
-}*/
 #scrollscrub {
 	position: absolute;
 	width: 8px;
@@ -45,18 +29,4 @@
 	border-top:1px solid #B7B7B7;
 	border-right: 1px solid #CBCBCB;
 	border-bottom:1px solid #BDBDBD;
-}/*
-#scrollscrub:hover {
-	background-color: #C0C0C0;
-	border-left:1px solid #9C9C9C;
-	border-top:1px solid #ADADAD;
-	border-right: 1px solid #C0C0C0;
-	border-bottom:1px solid #ADADAD;
 }
-#scrollscrub:active {
-	background-color: #797979;
-	border-left:1px solid #6C6C6C;
-	border-top:1px solid #5E5E5E;
-	border-bottom:1px solid #ADADAD;
-	border-right:1px solid #ADADAD;
-}*/

@@ -2,53 +2,81 @@
 <head>
 	<title>Test Scrubber</title>
     <link rel = "stylesheet" type="text/css" href="scrubber.css" >
+	<style>
+	body {
+		font-size: .8em;
+		background: #e0e0ef
+	}
+	h1 {
+		font-family: "century gothic", sans-serif;
+		color: #444;
+		text-shadow: #999 -1px 2px 1px;
+		font-size: 2em;
+	}
+	</style>
 </head>
 <body>	
-<div style='border:1px dotted red;height:100px;width:50px'>down</div>
-<div style='float:left;border:1px dotted red;height:50px;width:100px;padding-right:30px;'>over</div>
-<div id="scrollarea">
-    <div id="scrollcontent">
-    <!-- You can add all your contents here -->
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-		when an unknown printer took a galley of type and scrambled it to make a 
-		type specimen book. It has survived not only five centuries, but also the 
-		leap into electronic typesetting, remaining essentially unchanged. 
-		It was popularised in the 1960s with the release of Letraset sheets 
-		containing Lorem Ipsum passages, and more recently with desktop publishing 
-		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-		when an unknown printer took a galley of type and scrambled it to make a 
-		containing Lorem Ipsum passages, and more recently with desktop publishing 
-		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-		when an unknown printer took a galley of type and scrambled it to make a 
-		containing Lorem Ipsum passages, and more recently with desktop publishing 
-		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-		when an unknown printer took a galley of type and scrambled it to make a 
-		containing Lorem Ipsum passages, and more recently with desktop publishing 
-		software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-		when an unknown printer took a galley of type and scrambled it to make a 
-		containing Lorem Ipsum passages, and more recently with desktop publishing 
-		software like Aldus PageMaker including versions of Lorem Ipsum. 
-    </div>
-    <!--// don't remove this: the scrollbar and scrollscrubber place holder -->
-    <div id="scrollbar">
-        <div id="scrollscrub">
-        </div>
-    </div>
-    <!-- scrollbar end //-->
-</div><!-- end of scrollarea //-->
-    <script src="hooker.js"></script>
-    <script src="scrubber.js"></script>
+	<div style="background-color: #a00;overflow: hidden;position: absolute;right: -4.3em;top: 4.3em;-moz-transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-box-shadow: 0 0 1em #888;-webkit-box-shadow: 0 0 1em #888;"><a style="border: 1px solid #faa;color: #fff;display: block;font: bold 100% sans-serif;margin: 0.05em 0 0.075em 0;padding: 0.5em 3.5em;text-align: center;text-decoration: none;text-shadow: 0 0 0.5em #444;" href="http://github.com/kyleshay/scrubber">Obligatory GitHub Ribbon</a></div>
+	
+	<h1>scrubber's basic feature set.</h1>
+	<div style='border:1px dotted red;height:100px;width:50px'>down</div>
+	<div style='float:left;border:1px dotted red;height:50px;width:100px;padding-right:30px;'>over</div>
+	<div id="scrollarea">
+		<div id="scrollcontent">
+		<!-- You can add all your contents here -->
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a 
+			type specimen book. It has survived not only five centuries, but also the 
+			leap into electronic typesetting, remaining essentially unchanged. 
+			It was popularised in the 1960s with the release of Letraset sheets 
+			containing Lorem Ipsum passages, and more recently with desktop publishing 
+			software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a 
+			containing Lorem Ipsum passages, and more recently with desktop publishing 
+			software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a 
+			containing Lorem Ipsum passages, and more recently with desktop publishing 
+			software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a 
+			containing Lorem Ipsum passages, and more recently with desktop publishing 
+			software like Aldus PageMaker including versions of Lorem Ipsum.<hr>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+			when an unknown printer took a galley of type and scrambled it to make a 
+			containing Lorem Ipsum passages, and more recently with desktop publishing 
+			software like Aldus PageMaker including versions of Lorem Ipsum. 
+		</div>
+		<!--// don't remove this: the scrollbar and scrollscrubber place holder -->
+		<div id="scrollbar">
+			<div id="scrollscrub">
+			</div>
+		</div>
+		<!-- scrollbar end //-->
+	</div><!-- end of scrollarea //-->
+	<script src="hooker.js"></script>
+	<script src="scrubber.js"></script>
 	<script type="text/javascript">
-		hooker.on("load", window, scroll.initialize);
+		hooker.on("load", window, scroll.initialize({
+			scrub	:"scrollscrub",
+			bar		:"scrollbar",
+			content	:"scrollcontent",
+			area	:"scrollarea",
+			height	:window.innerHeight-300,
+			width	:300
+		}));
+		window.onresize = function() {
+			scroll.resize({
+				height	:window.innerHeight-300,
+				width	:300
+			});
+		}
 	</script>
 </body>
 
