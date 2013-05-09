@@ -1,6 +1,6 @@
 Required files:
 	scrubber.js - scroll bar dependencies
-	hooker.js - event handling dependencies
+	hook.js - event handling dependencies
 	
 HTML setup:	
 <div id="scrollarea">
@@ -10,10 +10,10 @@ HTML setup:
     <div id="scrollbar"><div id="scrollscrub"></div></div>
 </div>
 
-<script src="lib/hooker.js"></script>
+<script src="lib/hook.js"></script>
 <script src="lib/scrubber.js"></script>
 <script type="text/javascript">
-	hooker.on("load", window, scroll.initialize({
+	hook.on("load", window, scroll.initialize({
 		scrub	:"scrollscrub",
 		bar	:"scrollbar",
 		content	:"scrollcontent",
