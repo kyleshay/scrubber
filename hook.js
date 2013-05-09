@@ -19,7 +19,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-var hooker = {
+var hook = {
 	on: function(evnt, elem, func) {
 		if(typeof elem == 'string')
 			elem = document.getElementById(elem);
